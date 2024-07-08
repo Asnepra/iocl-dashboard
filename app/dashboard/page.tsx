@@ -170,7 +170,7 @@ export default function Component() {
           </TabsContent>
         </Tabs>
       </main>
-      <div className="fixed bottom-4 right-4 w-80 md:w-96">
+      <div className="fixed bottom-4 left-4 w-80 md:w-96">
         <Card>
           <CardHeader>
             <CardTitle>AI Assistant</CardTitle>
