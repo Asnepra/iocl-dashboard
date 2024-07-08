@@ -1,338 +1,408 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/zYuCtL1wxC7
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+"use client"
+import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
+import Link from "next/link"
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb"
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink } from "@/components/ui/breadcrumb"
 import { Input } from "@/components/ui/input"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem } from "@/components/ui/dropdown-menu"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
-import { CartesianGrid, XAxis, Line, LineChart } from "recharts"
+import { Card, CardHeader, CardDescription, CardTitle, CardContent } from "@/components/ui/card"
+import { CartesianGrid, XAxis, Line, LineChart, Bar, BarChart, Pie, PieChart, Area, AreaChart } from "recharts"
 import { ChartTooltipContent, ChartTooltip, ChartContainer } from "@/components/ui/chart"
-import { ResponsiveBar } from "@nivo/bar"
-import { ResponsiveLine } from "@nivo/line"
 
 export default function Component() {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background">
-      <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button size="icon" variant="outline" className="sm:hidden">
-              <MenuIcon className="h-5 w-5" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="sm:max-w-xs">
-            <div className="flex h-14 items-center justify-between px-4">
-              <Link href="#" className="flex items-center gap-2" prefetch={false}>
-                <MountainIcon className="h-6 w-6" />
-                <span className="text-lg font-semibold">IOCL-OEPD</span>
-              </Link>
-              <Button size="icon" variant="ghost" className="rounded-full" onClick={() => SheetContent.close()}>
-                <XIcon className="h-5 w-5" />
+    <div className="flex min-h-screen w-full flex-col bg-muted/40">
+      <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
+        <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
+          <TooltipProvider>
+            <Link
+              href="#"
+              className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
+              prefetch={false}
+            >
+              <Package2Icon className="h-4 w-4 transition-all group-hover:scale-110" />
+              <span className="sr-only">Indian Oil</span>
+            </Link>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  prefetch={false}
+                >
+                  <LayoutDashboardIcon className="h-5 w-5" />
+                  <span className="sr-only">Dashboard</span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="right">Dashboard</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  prefetch={false}
+                >
+                  <FactoryIcon className="h-5 w-5" />
+                  <span className="sr-only">Production</span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="right">Production</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  prefetch={false}
+                >
+                  <StoreIcon className="h-5 w-5" />
+                  <span className="sr-only">Sales</span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="right">Sales</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  prefetch={false}
+                >
+                  <MapIcon className="h-5 w-5" />
+                  <span className="sr-only">Geography</span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="right">Geography</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="#"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                  prefetch={false}
+                >
+                  <SettingsIcon className="h-5 w-5" />
+                  <span className="sr-only">Settings</span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="right">Settings</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </nav>
+      </aside>
+      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+        <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button size="icon" variant="outline" className="sm:hidden">
+                <PanelLeftIcon className="h-5 w-5" />
+                <span className="sr-only">Toggle Menu</span>
               </Button>
-            </div>
-            <nav className="grid gap-4 px-4 py-6">
-              <Link href="#" className="flex items-center gap-2 text-lg font-medium" prefetch={false}>
-                <LayoutDashboardIcon className="h-5 w-5" />
-                Dashboard
-              </Link>
-              <Link href="#" className="flex items-center gap-2 text-lg font-medium" prefetch={false}>
-                <MapIcon className="h-5 w-5" />
-                Assets
-              </Link>
-              <Link href="#" className="flex items-center gap-2 text-lg font-medium" prefetch={false}>
-                <FileTextIcon className="h-5 w-5" />
-                Reports
-              </Link>
-              <Link href="#" className="flex items-center gap-2 text-lg font-medium" prefetch={false}>
-                <SettingsIcon className="h-5 w-5" />
-                Settings
-              </Link>
-            </nav>
-          </SheetContent>
-        </Sheet>
-        <Breadcrumb className="hidden md:flex">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="#" prefetch={false}>
+            </SheetTrigger>
+            <SheetContent side="left" className="sm:max-w-xs">
+              <nav className="grid gap-6 text-lg font-medium">
+                <Link
+                  href="#"
+                  className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
+                  prefetch={false}
+                >
+                  <Package2Icon className="h-5 w-5 transition-all group-hover:scale-110" />
+                  <span className="sr-only">Indian Oil</span>
+                </Link>
+                <Link href="#" className="flex items-center gap-4 px-2.5 text-foreground" prefetch={false}>
+                  <LayoutDashboardIcon className="h-5 w-5" />
                   Dashboard
                 </Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>IOCL Overseas Exploration and Production</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-        <div className="relative ml-auto flex-1 md:grow-0">
-          <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Search..."
-            className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
-          />
-        </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon" className="overflow-hidden rounded-full">
-              <img
-                src="/placeholder.svg"
-                width={36}
-                height={36}
-                alt="Avatar"
-                className="overflow-hidden rounded-full"
-              />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>John Doe</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </header>
-      <main className="flex-1 grid gap-6 p-4 sm:p-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <Card className="h-full w-full">
-          <CardHeader>
-            <CardTitle>Total Production</CardTitle>
-            <CardDescription>The total production volume across all IOCL overseas assets.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <LinechartChart className="aspect-[9/4]" />
-          </CardContent>
-        </Card>
-        <Card className="h-full w-full">
-          <CardHeader>
-            <CardTitle>Reserves</CardTitle>
-            <CardDescription>The total proven and probable reserves across all IOCL overseas assets.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <BarChart className="aspect-[9/4]" />
-          </CardContent>
-        </Card>
-        <Card className="h-full w-full">
-          <CardHeader>
-            <CardTitle>Operational Efficiency</CardTitle>
-            <CardDescription>Key operational metrics for IOCL's overseas assets.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col gap-2">
-                <div className="text-2xl font-bold">92%</div>
-                <div className="text-muted-foreground">Uptime</div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="text-2xl font-bold">87%</div>
-                <div className="text-muted-foreground">Capacity Utilization</div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="text-2xl font-bold">4.2</div>
-                <div className="text-muted-foreground">LTIF</div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="text-2xl font-bold">98%</div>
-                <div className="text-muted-foreground">HSE Compliance</div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="h-full w-full">
-          <CardHeader>
-            <CardTitle>Asset Map</CardTitle>
-            <CardDescription>Geospatial view of IOCL's overseas exploration and production assets.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <LineChart className="aspect-[16/9]" />
-          </CardContent>
-        </Card>
-        <Card className="col-span-1 lg:col-span-2 xl:col-span-3 h-full w-full">
-          <CardHeader>
-            <CardTitle>Asset Performance</CardTitle>
-            <CardDescription>
-              Detailed performance metrics for IOCL's overseas exploration and production assets.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Asset</TableHead>
-                  <TableHead>Location</TableHead>
-                  <TableHead>Production</TableHead>
-                  <TableHead>Reserves</TableHead>
-                  <TableHead>Uptime</TableHead>
-                  <TableHead>LTIF</TableHead>
-                  <TableHead>Actions</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell>Offshore Field A</TableCell>
-                  <TableCell>Gulf of Mexico</TableCell>
-                  <TableCell>120,000 bpd</TableCell>
-                  <TableCell>250 MMbbl</TableCell>
-                  <TableCell>95%</TableCell>
-                  <TableCell>3.1</TableCell>
-                  <TableCell>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button size="icon" variant="ghost">
-                          <MoveHorizontalIcon className="h-4 w-4" />
-                          <span className="sr-only">Asset actions</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem>View Details</DropdownMenuItem>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem>Download Report</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Onshore Field B</TableCell>
-                  <TableCell>Kazakhstan</TableCell>
-                  <TableCell>80,000 bpd</TableCell>
-                  <TableCell>180 MMbbl</TableCell>
-                  <TableCell>92%</TableCell>
-                  <TableCell>4.5</TableCell>
-                  <TableCell>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button size="icon" variant="ghost">
-                          <MoveHorizontalIcon className="h-4 w-4" />
-                          <span className="sr-only">Asset actions</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem>View Details</DropdownMenuItem>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem>Download Report</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Offshore Field C</TableCell>
-                  <TableCell>West Africa</TableCell>
-                  <TableCell>150,000 bpd</TableCell>
-                  <TableCell>300 MMbbl</TableCell>
-                  <TableCell>90%</TableCell>
-                  <TableCell>2.8</TableCell>
-                  <TableCell>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button size="icon" variant="ghost">
-                          <MoveHorizontalIcon className="h-4 w-4" />
-                          <span className="sr-only">Asset actions</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem>View Details</DropdownMenuItem>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem>Download Report</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Onshore Field D</TableCell>
-                  <TableCell>Russia</TableCell>
-                  <TableCell>60,000 bpd</TableCell>
-                  <TableCell>150 MMbbl</TableCell>
-                  <TableCell>88%</TableCell>
-                  <TableCell>4.1</TableCell>
-                  <TableCell>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button size="icon" variant="ghost">
-                          <MoveHorizontalIcon className="h-4 w-4" />
-                          <span className="sr-only">Asset actions</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem>View Details</DropdownMenuItem>
-                        <DropdownMenuItem>Edit</DropdownMenuItem>
-                        <DropdownMenuItem>Download Report</DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
-      </main>
+                <Link
+                  href="#"
+                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                  prefetch={false}
+                >
+                  <FactoryIcon className="h-5 w-5" />
+                  Production
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                  prefetch={false}
+                >
+                  <StoreIcon className="h-5 w-5" />
+                  Sales
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                  prefetch={false}
+                >
+                  <MapIcon className="h-5 w-5" />
+                  Geography
+                </Link>
+                <Link
+                  href="#"
+                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                  prefetch={false}
+                >
+                  <SettingsIcon className="h-5 w-5" />
+                  Settings
+                </Link>
+              </nav>
+            </SheetContent>
+          </Sheet>
+          <Breadcrumb className="hidden md:flex">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="#" prefetch={false}>
+                    Dashboard
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          <div className="relative ml-auto flex-1 md:grow-0">
+            <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Search..."
+              className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
+            />
+          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon" className="overflow-hidden rounded-full">
+                <img
+                  src="/placeholder.svg"
+                  width={36}
+                  height={36}
+                  alt="Avatar"
+                  className="overflow-hidden rounded-full"
+                />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>Support</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </header>
+        <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Total Production</CardDescription>
+                <CardTitle>125,000 bpd</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <LinechartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Total Sales</CardDescription>
+                <CardTitle>$2.5 Billion</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <BarchartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Refining Capacity</CardDescription>
+                <CardTitle>69 MMT</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <PiechartlabelChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Exploration Wells</CardDescription>
+                <CardTitle>45</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <BarchartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Crude Oil Production</CardDescription>
+                <CardTitle>85,000 bpd</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <LinechartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Natural Gas Production</CardDescription>
+                <CardTitle>40 MMSCMD</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <LinechartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Domestic Sales</CardDescription>
+                <CardTitle>$1.8 Billion</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <BarchartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Export Sales</CardDescription>
+                <CardTitle>$700 Million</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <BarchartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Refining Utilization</CardDescription>
+                <CardTitle>92%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <LinechartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Retail Outlets</CardDescription>
+                <CardTitle>30,000</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <AreachartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Lubricant Sales</CardDescription>
+                <CardTitle>$500 Million</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <BarchartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col">
+              <CardHeader>
+                <CardDescription>Petrochemical Production</CardDescription>
+                <CardTitle>2.5 MMT</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <LinechartChart className="aspect-[4/3]" />
+              </CardContent>
+            </Card>
+          </div>
+        </main>
+      </div>
     </div>
   )
 }
 
-function BarChart(props:any) {
+function AreachartChart(props:any) {
   return (
     <div {...props}>
-      <ResponsiveBar
-        data={[
-          { name: "Jan", count: 111 },
-          { name: "Feb", count: 157 },
-          { name: "Mar", count: 129 },
-          { name: "Apr", count: 150 },
-          { name: "May", count: 119 },
-          { name: "Jun", count: 72 },
-        ]}
-        keys={["count"]}
-        indexBy="name"
-        margin={{ top: 0, right: 0, bottom: 40, left: 40 }}
-        padding={0.3}
-        colors={["#2563eb"]}
-        axisBottom={{
-          tickSize: 0,
-          tickPadding: 16,
-        }}
-        axisLeft={{
-          tickSize: 0,
-          tickValues: 4,
-          tickPadding: 16,
-        }}
-        gridYValues={4}
-        theme={{
-          tooltip: {
-            chip: {
-              borderRadius: "9999px",
-            },
-            container: {
-              fontSize: "12px",
-              textTransform: "capitalize",
-              borderRadius: "6px",
-            },
-          },
-          grid: {
-            line: {
-              stroke: "#f3f4f6",
-            },
+      <ChartContainer
+        config={{
+          desktop: {
+            label: "Desktop",
+            color: "hsl(var(--chart-1))",
           },
         }}
-        tooltipLabel={({ id }) => `${id}`}
-        enableLabel={false}
-        role="application"
-        ariaLabel="A bar chart showing data"
-      />
+        className="min-h-[300px]"
+      >
+        <AreaChart
+          accessibilityLayer
+          data={[
+            { month: "January", desktop: 186 },
+            { month: "February", desktop: 305 },
+            { month: "March", desktop: 237 },
+            { month: "April", desktop: 73 },
+            { month: "May", desktop: 209 },
+            { month: "June", desktop: 214 },
+          ]}
+          margin={{
+            left: 12,
+            right: 12,
+          }}
+        >
+          <CartesianGrid vertical={false} />
+          <XAxis
+            dataKey="month"
+            tickLine={false}
+            axisLine={false}
+            tickMargin={8}
+            tickFormatter={(value) => value.slice(0, 3)}
+          />
+          <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="line" />} />
+          <Area
+            dataKey="desktop"
+            type="natural"
+            fill="var(--color-desktop)"
+            fillOpacity={0.4}
+            stroke="var(--color-desktop)"
+          />
+        </AreaChart>
+      </ChartContainer>
     </div>
   )
 }
 
 
-function FileTextIcon(props:any) {
+function BarchartChart(props:any) {
+  return (
+    <div {...props}>
+      <ChartContainer
+        config={{
+          desktop: {
+            label: "Desktop",
+            color: "hsl(var(--chart-1))",
+          },
+        }}
+        className="min-h-[300px]"
+      >
+        <BarChart
+          accessibilityLayer
+          data={[
+            { month: "January", desktop: 186 },
+            { month: "February", desktop: 305 },
+            { month: "March", desktop: 237 },
+            { month: "April", desktop: 73 },
+            { month: "May", desktop: 209 },
+            { month: "June", desktop: 214 },
+          ]}
+        >
+          <CartesianGrid vertical={false} />
+          <XAxis
+            dataKey="month"
+            tickLine={false}
+            tickMargin={10}
+            axisLine={false}
+            tickFormatter={(value) => value.slice(0, 3)}
+          />
+          <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+          <Bar dataKey="desktop" fill="var(--color-desktop)" radius={8} />
+        </BarChart>
+      </ChartContainer>
+    </div>
+  )
+}
+
+
+function FactoryIcon(props:any) {
   return (
     <svg
       {...props}
@@ -346,11 +416,10 @@ function FileTextIcon(props:any) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-      <path d="M10 9H8" />
-      <path d="M16 13H8" />
-      <path d="M16 17H8" />
+      <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+      <path d="M17 18h1" />
+      <path d="M12 18h1" />
+      <path d="M7 18h1" />
     </svg>
   )
 }
@@ -375,80 +444,6 @@ function LayoutDashboardIcon(props:any) {
       <rect width="7" height="9" x="14" y="12" rx="1" />
       <rect width="7" height="5" x="3" y="16" rx="1" />
     </svg>
-  )
-}
-
-
-function LineChart(props:any) {
-  return (
-    <div {...props}>
-      <ResponsiveLine
-        data={[
-          {
-            id: "Desktop",
-            data: [
-              { x: "Jan", y: 43 },
-              { x: "Feb", y: 137 },
-              { x: "Mar", y: 61 },
-              { x: "Apr", y: 145 },
-              { x: "May", y: 26 },
-              { x: "Jun", y: 154 },
-            ],
-          },
-          {
-            id: "Mobile",
-            data: [
-              { x: "Jan", y: 60 },
-              { x: "Feb", y: 48 },
-              { x: "Mar", y: 177 },
-              { x: "Apr", y: 78 },
-              { x: "May", y: 96 },
-              { x: "Jun", y: 204 },
-            ],
-          },
-        ]}
-        margin={{ top: 10, right: 10, bottom: 40, left: 40 }}
-        xScale={{
-          type: "point",
-        }}
-        yScale={{
-          type: "linear",
-        }}
-        axisTop={null}
-        axisRight={null}
-        axisBottom={{
-          tickSize: 0,
-          tickPadding: 16,
-        }}
-        axisLeft={{
-          tickSize: 0,
-          tickValues: 5,
-          tickPadding: 16,
-        }}
-        colors={["#2563eb", "#e11d48"]}
-        pointSize={6}
-        useMesh={true}
-        gridYValues={6}
-        theme={{
-          tooltip: {
-            chip: {
-              borderRadius: "9999px",
-            },
-            container: {
-              fontSize: "12px",
-              textTransform: "capitalize",
-              borderRadius: "6px",
-            },
-          },
-          grid: {
-            line: {
-              stroke: "#f3f4f6",
-            },
-          },
-        }}
-        role="application"
-      />
-    </div>
   )
 }
 
@@ -518,7 +513,7 @@ function MapIcon(props:any) {
 }
 
 
-function MenuIcon(props:any) {
+function Package2Icon(props:any) {
   return (
     <svg
       {...props}
@@ -532,15 +527,15 @@ function MenuIcon(props:any) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" />
+      <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9" />
+      <path d="M12 3v6" />
     </svg>
   )
 }
 
 
-function MountainIcon(props:any) {
+function PanelLeftIcon(props:any) {
   return (
     <svg
       {...props}
@@ -554,30 +549,61 @@ function MountainIcon(props:any) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+      <rect width="18" height="18" x="3" y="3" rx="2" />
+      <path d="M9 3v18" />
     </svg>
   )
 }
 
 
-function MoveHorizontalIcon(props:any) {
+function PiechartlabelChart(props:any) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="18 8 22 12 18 16" />
-      <polyline points="6 8 2 12 6 16" />
-      <line x1="2" x2="22" y1="12" y2="12" />
-    </svg>
+    <div {...props}>
+      <ChartContainer
+        config={{
+          visitors: {
+            label: "Visitors",
+          },
+          chrome: {
+            label: "Chrome",
+            color: "hsl(var(--chart-1))",
+          },
+          safari: {
+            label: "Safari",
+            color: "hsl(var(--chart-2))",
+          },
+          firefox: {
+            label: "Firefox",
+            color: "hsl(var(--chart-3))",
+          },
+          edge: {
+            label: "Edge",
+            color: "hsl(var(--chart-4))",
+          },
+          other: {
+            label: "Other",
+            color: "hsl(var(--chart-5))",
+          },
+        }}
+        className="mx-auto aspect-square max-h-[250px] pb-0"
+      >
+        <PieChart>
+          <ChartTooltip content={<ChartTooltipContent hideLabel />} />
+          <Pie
+            data={[
+              { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
+              { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+              { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
+              { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
+              { browser: "other", visitors: 90, fill: "var(--color-other)" },
+            ]}
+            dataKey="visitors"
+            label
+            nameKey="browser"
+          />
+        </PieChart>
+      </ChartContainer>
+    </div>
   )
 }
 
@@ -624,7 +650,7 @@ function SettingsIcon(props:any) {
 }
 
 
-function XIcon(props:any) {
+function StoreIcon(props:any) {
   return (
     <svg
       {...props}
@@ -638,8 +664,11 @@ function XIcon(props:any) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
+      <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+      <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+      <path d="M2 7h20" />
+      <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7" />
     </svg>
   )
 }
