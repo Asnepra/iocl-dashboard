@@ -9,6 +9,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLab
 import { Card, CardHeader, CardDescription, CardTitle, CardContent } from "@/components/ui/card"
 import { CartesianGrid, XAxis, Line, LineChart, Bar, BarChart, Pie, PieChart, Area, AreaChart } from "recharts"
 import { ChartTooltipContent, ChartTooltip, ChartContainer } from "@/components/ui/chart"
+import Image from "next/image"
 
 export default function Component() {
   return (
@@ -172,7 +173,7 @@ export default function Component() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon" className="overflow-hidden rounded-full">
-                <img
+                <Image
                   src="/placeholder.svg"
                   width={36}
                   height={36}

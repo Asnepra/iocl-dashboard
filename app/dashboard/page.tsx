@@ -208,7 +208,7 @@ export default function Component() {
                     reserves, followed by Iran and the US. Canada and Qatar are also significant gas exporters.
                   </p>
                   <p>
-                    Overall, I'm seeing steady production growth in most countries, with some fluctuations due to market
+                    Overall, I am seeing steady production growth in most countries, with some fluctuations due to market
                     conditions and geopolitical factors. Let me know if you need any other insights!
                   </p>
                 </div>

@@ -14,6 +14,7 @@ import { Card, CardHeader, CardDescription, CardTitle, CardContent } from "@/com
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { CartesianGrid, XAxis, Line, LineChart } from "recharts"
 import { ChartTooltipContent, ChartTooltip, ChartContainer } from "@/components/ui/chart"
+import Image from "next/image"
 
 interface OilData {
     country: string;
@@ -122,7 +123,7 @@ export default function Component() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="rounded-full border w-8 h-8">
-                <img src="/placeholder.svg" width="32" height="32" className="rounded-full" alt="Avatar" />
+                <Image src="/placeholder.svg" width="32" height="32" className="rounded-full" alt="Avatar" />
                 <span className="sr-only">Toggle user menu</span>
               </Button>
             </DropdownMenuTrigger>
@@ -242,7 +243,7 @@ export default function Component() {
                         <div className="font-bold">Oil & Gas AI</div>
                         <div className="prose text-muted-foreground">
                           <p>
-                            Hello! I'm an AI assistant here to help you analyze the oil and gas production data. How can
+                            Hello! I am an AI assistant here to help you analyze the oil and gas production data. How can
                             I assist you today?
                           </p>
                         </div>
@@ -281,11 +282,11 @@ export default function Component() {
                             Some key insights: - The US has been able to increase its oil and gas production
                             significantly in recent years due to advancements in shale extraction technology. - Saudi
                             Arabia remains a major global player, with its state-owned oil company Aramco being one of
-                            the largest producers and exporters. - Russia's production and exports have been impacted by
+                            the largest producers and exporters. - Russia production and exports have been impacted by
                             geopolitical factors and sanctions, but it still maintains a strong position.
                           </p>
                           <p>
-                            Let me know if you have any other questions! I'm happy to provide more detailed analysis.
+                            Let me know if you have any other questions! I am happy to provide more detailed analysis.
                           </p>
                         </div>
                       </div>
@@ -299,7 +300,7 @@ export default function Component() {
                         <div className="font-bold">You</div>
                         <div className="prose text-muted-foreground">
                           <p>
-                            That's very helpful, thank you. Can you also provide some insights on the trends in oil and
+                            Thats very helpful, thank you. Can you also provide some insights on the trends in oil and
                             gas production over time?
                           </p>
                         </div>
