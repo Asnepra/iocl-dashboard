@@ -241,7 +241,7 @@ export default function Component() {
   )
 }
 
-function AreachartChart(props) {
+function AreachartChart(props:any) {
   return (
     <div {...props}>
       <ChartContainer
@@ -291,7 +291,7 @@ function AreachartChart(props) {
 }
 
 
-function ArrowLeftIcon(props) {
+function ArrowLeftIcon(props:any) {
   return (
     <svg
       {...props}
@@ -312,7 +312,7 @@ function ArrowLeftIcon(props) {
 }
 
 
-function BarChartIcon(props) {
+function BarChartIcon(props:any) {
   return (
     <svg
       {...props}
@@ -334,7 +334,7 @@ function BarChartIcon(props) {
 }
 
 
-function BarchartChart(props) {
+function BarchartChart(props:any) {
   return (
     <div {...props}>
       <ChartContainer
@@ -374,7 +374,7 @@ function BarchartChart(props) {
 }
 
 
-function BellIcon(props) {
+function BellIcon(props:any) {
   return (
     <svg
       {...props}
@@ -395,7 +395,7 @@ function BellIcon(props) {
 }
 
 
-function CalendarClockIcon(props) {
+function CalendarClockIcon(props:any) {
   return (
     <svg
       {...props}
@@ -420,7 +420,7 @@ function CalendarClockIcon(props) {
 }
 
 
-function CpuIcon(props) {
+function CpuIcon(props:any) {
   return (
     <svg
       {...props}
@@ -449,7 +449,7 @@ function CpuIcon(props) {
 }
 
 
-function DollarSignIcon(props) {
+function DollarSignIcon(props:any) {
   return (
     <svg
       {...props}
@@ -470,7 +470,7 @@ function DollarSignIcon(props) {
 }
 
 
-function HomeIcon(props) {
+function HomeIcon(props:any) {
   return (
     <svg
       {...props}
@@ -491,7 +491,7 @@ function HomeIcon(props) {
 }
 
 
-function LinechartChart(props) {
+function LinechartChart(props:any) {
   return (
     <div {...props}>
       <ChartContainer
@@ -534,7 +534,7 @@ function LinechartChart(props) {
 }
 
 
-function MapPinIcon(props) {
+function MapPinIcon(props:any) {
   return (
     <svg
       {...props}
@@ -555,7 +555,7 @@ function MapPinIcon(props) {
 }
 
 
-function SearchIcon(props) {
+function SearchIcon(props:any) {
   return (
     <svg
       {...props}
@@ -576,7 +576,7 @@ function SearchIcon(props) {
 }
 
 
-function ShellIcon(props) {
+function ShellIcon(props:any) {
   return (
     <svg
       {...props}
