@@ -54,15 +54,15 @@ export default function Component() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href="/ai"
                   className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                   prefetch={false}
                 >
                   <StoreIcon className="h-5 w-5" />
-                  <span className="sr-only">Sales</span>
+                  <span className="sr-only">AI ML</span>
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right">Sales</TooltipContent>
+              <TooltipContent side="right">AI ML</TooltipContent>
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -125,12 +125,12 @@ export default function Component() {
                   Production
                 </Link>
                 <Link
-                  href="#"
+                  href="/ai"
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                   prefetch={false}
                 >
                   <StoreIcon className="h-5 w-5" />
-                  Sales
+                  AI ML
                 </Link>
                 <Link
                   href="#"
