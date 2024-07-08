@@ -112,12 +112,12 @@ export default function Component() {
                   <Package2Icon className="h-5 w-5 transition-all group-hover:scale-110" />
                   <span className="sr-only">Indian Oil</span>
                 </Link>
-                <Link href="#" className="flex items-center gap-4 px-2.5 text-foreground" prefetch={false}>
+                <Link href="/dashboard" className="flex items-center gap-4 px-2.5 text-foreground" prefetch={false}>
                   <LayoutDashboardIcon className="h-5 w-5" />
                   Dashboard
                 </Link>
                 <Link
-                  href="#"
+                  href="/production"
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                   prefetch={false}
                 >
@@ -197,7 +197,7 @@ export default function Component() {
             <Card className="flex flex-col">
               <CardHeader>
                 <CardDescription>Total Production</CardDescription>
-                <CardTitle>125,000 bpd</CardTitle>
+                <CardTitle>125000 bpd</CardTitle>
               </CardHeader>
               <CardContent>
                 <LinechartChart className="aspect-[4/3]" />
@@ -235,7 +235,7 @@ export default function Component() {
             <Card className="flex flex-col">
               <CardHeader>
                 <CardDescription>Crude Oil Production</CardDescription>
-                <CardTitle>85,000 bpd</CardTitle>
+                <CardTitle>85000 bpd</CardTitle>
               </CardHeader>
               <CardContent>
                 <LinechartChart className="aspect-[4/3]" />
